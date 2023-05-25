@@ -30,10 +30,10 @@ module.exports = {
         lines.push(`<:calendar2:1107446281057615902> **Entrou em:** <t:${parseInt(member.joinedAt / 1000)}:f>`)
 
         const assetslines = [];
-        assetslines.push(`**Avatar:** ${member.user.avatarURL({ dynamic: true }) ? `[baixe aqui](${member.user.avatarURL({ dynamic: true })})` : `*Indisponível*`}`)
+        assetslines.push(`**Avatar:** ${member.user.avatarURL({ dynamic: true }) ? `[baixe aqui](${member.user.avatarURL({ dynamic: true, size: 2048 })})` : `*Indisponível*`}`)
         assetslines.push(`**Cor do banner:** ${member.user.hexAccentColor ? `\`${member.user.hexAccentColor}\`` : "*Indisponível*"}`)
-        assetslines.push(`**Banner:** ${member.user.bannerURL({ dynamic: true }) ? `[baixe aqui](${member.user.bannerURL({ dynamic: true })})` : `*Indisponível*`}`)
-        assetslines.push(`**Avatar no servidor:** ${member.avatarURL({ dynamic: true }) ? `[baixe aqui](${member.avatarURL({ dynamic: true })})` : `*Indisponível*`}`)
+        assetslines.push(`**Banner:** ${member.user.bannerURL() ? `[baixe aqui](${member.user.bannerURL({ size: 2048 })})` : `*Indisponível*`}`)
+        assetslines.push(`**Avatar no servidor:** ${member.avatarURL({ dynamic: true }) ? `[baixe aqui](${member.avatarURL({ dynamic: true, size: 2048 })})` : `*Indisponível*`}`)
 
         function assetsEmbed(name, url) {
             return new Discord.EmbedBuilder()
@@ -155,9 +155,9 @@ module.exports = {
                 interaction.update({ embeds: [embed4], components: [updaterow] })
             }
 
-            if (interaction.customId === "userinfo_assets_avatar") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("avatar", member.user.avatarURL({ dynamic: true }))] })
-            if (interaction.customId === "userinfo_assets_banner") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("banner", member.user.bannerURL({ dynamic: true }))] })
-            if (interaction.customId === "userinfo_assets_serveravatar") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("avatar no servidor", member.avatarURL({ dynamic: true }))] })
+            if (interaction.customId === "userinfo_assets_avatar") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("avatar", member.user.avatarURL({ dynamic: true, size: 2048 }))] })
+            if (interaction.customId === "userinfo_assets_banner") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("banner", member.user.bannerURL({ size: 2048 }))] })
+            if (interaction.customId === "userinfo_assets_serveravatar") interaction.reply({ ephemeral: true, embeds: [assetsEmbed("avatar no servidor", member.avatarURL({ dynamic: true, size: 2048 }))] })
 
         })
 

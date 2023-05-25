@@ -3,7 +3,8 @@ const Discord = require("discord.js")
 module.exports = (usemode, arguments, inMessageObject = true) => {
 
     const argumentsDescriptions = {
-        "User": "Menção de um usuário (@Nem Tudo#7986) ou ID (612651439701098558)"
+        "User": "Menção de um usuário (@Nem Tudo#7986) ou ID (612651439701098558)",
+        "Server": "ID de um servidor (990263436774621214)",
     }
 
 
