@@ -10,7 +10,7 @@ module.exports = {
         const row = new Discord.ActionRowBuilder().addComponents(
             new Discord.ButtonBuilder()
                 .setURL("https://elixirbot.nemtudo.me")
-                .setLabel("Site e painel de controle")
+                .setLabel("Site")
                 .setStyle(Discord.ButtonStyle.Link)
         )
 
