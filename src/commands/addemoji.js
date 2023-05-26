@@ -34,8 +34,6 @@ module.exports = {
 
             const match = /<(?:a)?:\w+:(\d+)>/.exec(args[0])
 
-            console.log(match);
-
             if (match) {
                 const emoji = client.emojis.cache.get(match[1])
 
@@ -67,8 +65,6 @@ module.exports = {
         }).catch(e => {
             message.reply(client.settings.functions.getErrorEmbed(`Erro ao criar emoji: \`${e}\``))
         })
-
-        console.log(createdEmoji);
 
         if (createdEmoji) {
             const embed = new Discord.EmbedBuilder()
