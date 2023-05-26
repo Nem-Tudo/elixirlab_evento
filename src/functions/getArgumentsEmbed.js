@@ -5,6 +5,12 @@ module.exports = (usemode, arguments, inMessageObject = true) => {
     const argumentsDescriptions = {
         "User": "Menção de um usuário (@Nem Tudo#7986) ou ID (612651439701098558)",
         "Server": "ID de um servidor (990263436774621214)",
+        "Texto": "Texto de escolha, pode conter espaços",
+        "Emoji": "Emoji deste ou de outro servidor",
+        "Anexo": "Imagem anexada na mensagem",
+        "Nome": "Texto, sem espaços",
+        "URL": "Link de uma imagem ou gif",
+        "Prefixo": "Texto curto sem espaços"
     }
 
 
